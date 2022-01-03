@@ -9,16 +9,34 @@ class AuthButtonSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      children: const [
-        AuthScreenButton(route: loginRoute, text: 'login'),
-        AuthScreenButton(
-          route: registerRoute,
-          text: 'register',
-          isLighter: true,
-        ),
-      ],
-    );
+    var orientation = MediaQuery.of(context).orientation;
+    return orientation == Orientation.landscape
+        ? Container(
+            margin: EdgeInsets.only(
+              bottom: orientation == Orientation.landscape ? 20.0 : 0.0,
+            ),
+            child: Column(
+              children: const [
+                AuthScreenButton(route: loginRoute, text: 'login'),
+                SizedBox(height: 20.0),
+                AuthScreenButton(
+                  route: registerRoute,
+                  text: 'register',
+                  isLighter: true,
+                ),
+              ],
+            ),
+          )
+        : Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: const [
+              AuthScreenButton(route: loginRoute, text: 'login'),
+              AuthScreenButton(
+                route: registerRoute,
+                text: 'register',
+                isLighter: true,
+              ),
+            ],
+          );
   }
 }

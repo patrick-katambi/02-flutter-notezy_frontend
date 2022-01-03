@@ -8,31 +8,59 @@ class Authentication extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var orientation = MediaQuery.of(context).orientation;
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: <Widget>[
-          Expanded(
-            flex: 2,
-            child: Container(color: Theme.of(context).primaryColor),
-          ),
-          Expanded(
-            child: Container(
-              padding: const EdgeInsets.all(10.0),
-              child: Column(
-                children: const <Widget>[
-                  PunchLine(),
-                  SizedBox(height: 20.0),
-                  SupportingPunchLine(),
-                  Spacer(),
-                  AuthButtonSection()
-                ],
-              ),
+      body: orientation == Orientation.landscape
+          ? Row(
+              children: [
+                Expanded(
+                  child: Container(color: Theme.of(context).primaryColor),
+                ),
+                Expanded(
+                  child: ListView(
+                    padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                    physics: const BouncingScrollPhysics(),
+                    children: [
+                      const SizedBox(height: 20.0),
+                      const PunchLine(),
+                      const SizedBox(height: 20.0),
+                      const SupportingPunchLine(),
+                      SizedBox(
+                        height: MediaQuery.of(context).size.height * 0.25,
+                      ),
+                      const AuthButtonSection(),
+                    ],
+                  ),
+                )
+              ],
+            )
+          : Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                Expanded(
+                  flex: 2,
+                  child: Container(color: Theme.of(context).primaryColor),
+                ),
+                Expanded(
+                  child: ListView(
+                    padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                    physics: const BouncingScrollPhysics(),
+                    children: <Widget>[
+                      const SizedBox(height: 20.0),
+                      const PunchLine(),
+                      const SizedBox(height: 20.0),
+                      const SupportingPunchLine(),
+                      SizedBox(
+                        height: MediaQuery.of(context).size.height * 0.06,
+                      ),
+                      const AuthButtonSection(),
+                      const SizedBox(height: 40.0)
+                    ],
+                  ),
+                ),
+              ],
             ),
-          ),
-        ],
-      ),
     );
   }
 }

@@ -9,6 +9,12 @@ class PunchLine extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const LargeTitleText(text: welcomePunchLine);
+    var orientation = MediaQuery.of(context).orientation;
+    return Container(
+      margin: EdgeInsets.only(
+        top: orientation == Orientation.landscape ? 20.0 : 0.0,
+      ),
+      child: const LargeTitleText(text: welcomePunchLine),
+    );
   }
 }

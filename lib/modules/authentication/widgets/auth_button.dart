@@ -14,12 +14,15 @@ class AuthScreenButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var orientation = MediaQuery.of(context).orientation;
     return GestureDetector(
       onTap: () {
         Navigator.pushNamed(context, route);
       },
       child: Container(
-        width: MediaQuery.of(context).size.width * 0.45,
+        width: orientation == Orientation.landscape
+            ? MediaQuery.of(context).size.width
+            : MediaQuery.of(context).size.width * 0.45,
         padding: const EdgeInsets.symmetric(vertical: 15.0),
         alignment: Alignment.center,
         decoration: BoxDecoration(
