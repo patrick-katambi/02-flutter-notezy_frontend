@@ -1,6 +1,6 @@
 # notezy
 
-A flutter app that serves hot news from around the globe
+A personal touch on taking everyday notes for ideas
 
 ## Getting Started
 
