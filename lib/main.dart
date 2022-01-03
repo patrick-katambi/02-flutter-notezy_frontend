@@ -2,8 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:global_news/modules/authentication/authentication.dart';
-import 'package:global_news/modules/authentication/login/login.dart';
-import 'package:global_news/modules/authentication/register/register.dart';
+import 'package:global_news/modules/authentication/login_module/login.dart';
+import 'package:global_news/modules/authentication/register_module/register.dart';
 import 'package:global_news/modules/screens.dart';
 
 void main() {
