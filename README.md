@@ -1,4 +1,4 @@
-# global_news
+# notezy
 
 A flutter app that serves hot news from around the globe
 
