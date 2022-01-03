@@ -41,6 +41,10 @@ class Root extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        scaffoldBackgroundColor: const Color(0xff070706),
+        textTheme: const TextTheme(
+          bodyText1: TextStyle(color: Colors.white)
+        )
       ),
       initialRoute: '/',
       onGenerateRoute: onGenerateRoute,

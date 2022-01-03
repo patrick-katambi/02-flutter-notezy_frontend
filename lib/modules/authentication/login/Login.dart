@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:global_news/modules/authentication/register/Register.dart';
 import 'package:global_news/widgets/bar.dart';
+import 'package:global_news/widgets/normalText.dart';
 
 class Login extends StatelessWidget {
   static String name = '/login';
@@ -11,7 +12,7 @@ class Login extends StatelessWidget {
     return Scaffold(
       appBar: bar(title: 'login'),
       body: const Center(
-        child: Text("Login"),
+        child: NormalText(text: 'login')
       ),
     );
   }

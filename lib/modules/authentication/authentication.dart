@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:global_news/modules/authentication/login/Login.dart';
 import 'package:global_news/modules/authentication/register/Register.dart';
 import 'package:global_news/widgets/bar.dart';
+import 'package:global_news/widgets/normalText.dart';
 
 class Authentication extends StatelessWidget {
   const Authentication({Key? key}) : super(key: key);
@@ -19,7 +20,7 @@ class Authentication extends StatelessWidget {
               Navigator.pushNamed(context, Login.name);
             },
             child: const Center(
-              child: Text("Login"),
+              child: NormalText(text: 'login'),
             ),
           ),
           const SizedBox(height: 100.0),
@@ -28,7 +29,7 @@ class Authentication extends StatelessWidget {
               Navigator.pushNamed(context, Register.name);
             },
             child: const Center(
-              child: Text("Register"),
+              child: NormalText(text: 'register'),
             ),
           ),
         ],

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:global_news/widgets/bar.dart';
+import 'package:global_news/widgets/normalText.dart';
 
 class Register extends StatelessWidget {
   static String name = '/register';
@@ -10,7 +11,7 @@ class Register extends StatelessWidget {
     return Scaffold(
       appBar: bar(title: 'register'),
       body: const Center(
-        child: Text("Register"),
+        child: NormalText(text: 'register'),
       ),
     );
   }
