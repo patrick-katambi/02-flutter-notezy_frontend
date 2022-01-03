@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:global_news/widgets/barBackIcon.dart';
+import 'package:global_news/widgets/bar_back_icon.dart';
 
 AppBar bar(
     {String? title, Widget? leadingIcon, required BuildContext context}) {
@@ -9,6 +9,6 @@ AppBar bar(
     leading: leadingIcon ?? const BarBackIcon(),
     automaticallyImplyLeading: true,
     elevation: 0.0,
-    backgroundColor: Theme.of(context).scaffoldBackgroundColor.withBlue(30),
+    backgroundColor: Theme.of(context).primaryColor,
   );
 }

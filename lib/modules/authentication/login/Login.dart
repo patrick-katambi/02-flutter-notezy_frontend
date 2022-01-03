@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:global_news/widgets/bar.dart';
-import 'package:global_news/widgets/normalText.dart';
+import 'package:global_news/widgets/normal_text.dart';
 
 class Login extends StatelessWidget {
   static String name = '/login';
