@@ -1,5 +1,3 @@
-const Map<String, String> screenRoutes = {
-  'home': '/',
-  'login': '/login',
-  'register': '/register'
-};
+const homeRoute = '/';
+const loginRoute = '/login';
+const registerRoute = '/register';

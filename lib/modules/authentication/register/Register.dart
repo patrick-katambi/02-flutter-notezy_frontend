@@ -9,7 +9,7 @@ class Register extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: bar(title: 'register'),
+      appBar: bar(title: 'register', context: context),
       body: const Center(
         child: NormalText(text: 'register'),
       ),

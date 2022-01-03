@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:global_news/modules/authentication/register/Register.dart';
 import 'package:global_news/widgets/bar.dart';
 import 'package:global_news/widgets/normalText.dart';
 
@@ -10,10 +9,8 @@ class Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: bar(title: 'login'),
-      body: const Center(
-        child: NormalText(text: 'login')
-      ),
+      appBar: bar(title: 'login', context: context),
+      body: const Center(child: NormalText(text: 'login')),
     );
   }
 }
