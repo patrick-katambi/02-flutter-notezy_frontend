@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:global_news/modules/authentication/login_module/widgets/email_field.dart';
+import 'package:global_news/modules/authentication/login_module/widgets/password_field.dart';
 import 'package:global_news/widgets/bar.dart';
-import 'package:global_news/widgets/text_field.dart';
+import 'package:global_news/widgets/button.dart';
+import 'package:global_news/widgets/normal_text.dart';
 
 class Login extends StatefulWidget {
   static String name = '/login';
@@ -11,38 +14,43 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
-  final _emailFieldController = TextEditingController();
-  final _passwordFieldController = TextEditingController();
   final _loginFormKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
+    var orientation = MediaQuery.of(context).orientation;
     return Scaffold(
       appBar: bar(title: 'login', context: context),
-      body: Form(
-        key: _loginFormKey,
-        child: ListView(
-          padding: const EdgeInsets.symmetric(horizontal: 20.0),
-          physics: const BouncingScrollPhysics(),
-          children: [
-            const SizedBox(height: 20.0),
-            TextFieldCustom(
-              controller: _emailFieldController,
-              onChanged: (value) {},
-              validator: (value) {},
-              hint: 'my_email@gmail.com',
-              labelText: 'Email',
-            ),
-            const SizedBox(height: 20.0),
-            TextFieldCustom(
-              controller: _passwordFieldController,
-              onChanged: (value) {},
-              validator: (value) {},
-              isObscured: true,
-              hint: 'your secret code',
-              labelText: 'Password',
-            ),
-          ],
+      body: ListView(
+        padding: EdgeInsets.symmetric(
+          horizontal: orientation == Orientation.landscape
+              ? MediaQuery.of(context).size.width * 0.15
+              : 20.0,
         ),
+        physics: const BouncingScrollPhysics(),
+        children: [
+          const SizedBox(height: 20.0),
+          Form(
+            key: _loginFormKey,
+            child: Column(
+              children: const <Widget>[
+                EmailField(),
+                SizedBox(height: 20.0),
+                PasswordField()
+              ],
+            ),
+          ),
+          const SizedBox(height: 20.0),
+          ButtonGlobal(
+            onPressed: () {
+              if (_loginFormKey.currentState!.validate()) {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: NormalText(text: 'Processing Data')),
+                );
+              }
+            },
+            text: 'Submit',
+          ),
+        ],
       ),
     );
   }

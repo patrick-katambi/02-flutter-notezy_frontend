@@ -38,6 +38,7 @@ class _TextFieldCustomState extends State<TextFieldCustom> {
       style: fieldTextStyle(context: context),
       decoration: InputDecoration(
         labelText: widget.labelText,
+        errorStyle: errorTextStyle(context: context),
         labelStyle: Theme.of(context).textTheme.bodyText1,
         hintText: widget.hint,
         hintStyle: hintTextStyle(context: context),
@@ -48,6 +49,12 @@ class _TextFieldCustomState extends State<TextFieldCustom> {
         suffixIcon: widget.suffix,
       ),
     );
+  }
+
+  TextStyle errorTextStyle({required BuildContext context}) {
+    return Theme.of(context).textTheme.bodyText1!.copyWith(
+          color: Colors.red,
+        );
   }
 
   TextStyle fieldTextStyle({required BuildContext context}) {

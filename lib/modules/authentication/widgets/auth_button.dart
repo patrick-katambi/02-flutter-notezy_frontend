@@ -15,22 +15,19 @@ class AuthScreenButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var orientation = MediaQuery.of(context).orientation;
-    return GestureDetector(
-      onTap: () {
-        Navigator.pushNamed(context, route);
-      },
-      child: Container(
-        width: orientation == Orientation.landscape
-            ? MediaQuery.of(context).size.width
-            : MediaQuery.of(context).size.width * 0.45,
-        padding: const EdgeInsets.symmetric(vertical: 15.0),
-        alignment: Alignment.center,
-        decoration: BoxDecoration(
-          color: isLighter == false
-              ? Theme.of(context).primaryColor
-              : Colors.green,
-          borderRadius: BorderRadius.circular(10.0),
+    return SizedBox(
+      width: orientation == Orientation.landscape
+          ? MediaQuery.of(context).size.width
+          : MediaQuery.of(context).size.width * 0.45,
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          primary: Theme.of(context).primaryColor,
+          padding: const EdgeInsets.symmetric(vertical: 15.0),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10.0),
+          ),
         ),
+        onPressed: () => Navigator.pushNamed(context, route),
         child: AuthText(text: text),
       ),
     );
