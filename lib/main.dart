@@ -42,8 +42,12 @@ class Root extends StatelessWidget {
       theme: ThemeData(
         primaryColor: const Color(0xff9e5c32),
         scaffoldBackgroundColor: const Color(0xff070706),
+        fontFamily: 'Lora',
         textTheme: const TextTheme(
-          bodyText1: TextStyle(color: Colors.white),
+          bodyText1: TextStyle(
+            fontFamily: 'Mulish',
+            color: Colors.white,
+          ),
         ),
       ),
       initialRoute: '/',

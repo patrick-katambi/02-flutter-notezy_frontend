@@ -10,6 +10,7 @@ class LargeTitleText extends StatelessWidget {
       text,
       textAlign: TextAlign.center,
       style: const TextStyle(
+        fontFamily: 'Lora',
         color: Colors.white,
         fontWeight: FontWeight.bold,
         fontSize: 30.0,
