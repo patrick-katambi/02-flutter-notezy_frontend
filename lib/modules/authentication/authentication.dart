@@ -13,8 +13,8 @@ class Authentication extends StatelessWidget {
       body: orientation == Orientation.landscape
           ? Row(
               children: [
-                Expanded(
-                  child: Container(color: Theme.of(context).primaryColor),
+                const Expanded(
+                  child: WelcomeScreenImage(),
                 ),
                 Expanded(
                   child: ListView(
@@ -38,9 +38,9 @@ class Authentication extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
-                Expanded(
+                const Expanded(
                   flex: 2,
-                  child: Container(color: Theme.of(context).primaryColor),
+                  child: WelcomeScreenImage(),
                 ),
                 Expanded(
                   child: ListView(
@@ -61,6 +61,39 @@ class Authentication extends StatelessWidget {
                 ),
               ],
             ),
+    );
+  }
+}
+
+class WelcomeScreenImage extends StatelessWidget {
+  const WelcomeScreenImage({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    var orientation = MediaQuery.of(context).orientation;
+    return Container(
+      decoration: BoxDecoration(
+        color: Theme.of(context).primaryColor,
+        borderRadius: BorderRadius.only(
+          topRight: orientation == Orientation.landscape
+              ? const Radius.circular(20.0)
+              : const Radius.circular(0.0),
+          bottomRight: const Radius.circular(20.0),
+          bottomLeft: orientation == Orientation.landscape
+              ? const Radius.circular(0.0)
+              : const Radius.circular(20.0),
+        ),
+        image: const DecorationImage(
+          image: AssetImage('assets/images/skateboard.png'),
+          fit: BoxFit.cover,
+          // colorFilter: ColorFilter.mode(
+          //   Colors.blueGrey,
+          //   BlendMode.darken,
+          // ),
+        ),
+      ),
     );
   }
 }
