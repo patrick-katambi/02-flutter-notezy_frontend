@@ -71,8 +71,8 @@ class _TextFieldCustomState extends State<TextFieldCustom> {
 
   OutlineInputBorder borderStyle({required BuildContext context}) {
     // the context will help in theme management possibly 🤷‍♂️
-    return const OutlineInputBorder(
-      borderSide: BorderSide(color: Colors.white),
-    );
+    return OutlineInputBorder(
+        borderSide: const BorderSide(color: Colors.white, width: 0.5),
+        borderRadius: BorderRadius.circular(10.0));
   }
 }
