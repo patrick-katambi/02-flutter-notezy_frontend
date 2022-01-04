@@ -40,7 +40,8 @@ class Root extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primaryColor: const Color(0xff9e5c32),
+        // primaryColor: const Color(0xff9e5c32),
+        primaryColor: const Color(0xff140F48),
         scaffoldBackgroundColor: const Color(0xff070706),
         fontFamily: 'Lora',
         textTheme: const TextTheme(
