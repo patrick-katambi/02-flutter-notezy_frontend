@@ -7,7 +7,6 @@ import 'package:global_news/modules/authentication/widgets/login_or_register.dar
 import 'package:global_news/modules/routes.dart';
 
 class Login extends StatefulWidget {
-  static String name = '/login';
   const Login({Key? key}) : super(key: key);
 
   @override
@@ -20,7 +19,6 @@ class _LoginState extends State<Login> {
   Widget build(BuildContext context) {
     var orientation = MediaQuery.of(context).orientation;
     return Scaffold(
-      // appBar: bar(title: 'login', context: context),
       body: orientation == Orientation.landscape
           ? Stack(
               children: [

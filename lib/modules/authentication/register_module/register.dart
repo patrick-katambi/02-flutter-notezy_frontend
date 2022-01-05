@@ -8,7 +8,6 @@ import 'package:global_news/modules/authentication/widgets/login_or_register.dar
 import 'package:global_news/modules/routes.dart';
 
 class Register extends StatefulWidget {
-  static String name = '/register';
   const Register({Key? key}) : super(key: key);
 
   @override
