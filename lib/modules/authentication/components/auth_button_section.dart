@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:global_news/modules/authentication/widgets/auth_button.dart';
-import 'package:global_news/modules/screens.dart';
+import 'package:global_news/modules/routes.dart';
 
 class AuthButtonSection extends StatelessWidget {
   const AuthButtonSection({

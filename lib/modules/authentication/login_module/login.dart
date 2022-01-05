@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:global_news/modules/authentication/login_module/component/form.dart';
 import 'package:global_news/modules/authentication/login_module/component/login_message.dart';
-import 'package:global_news/modules/authentication/login_module/widgets/back_icon_button.dart';
+import 'package:global_news/modules/authentication/widgets/back_icon_button.dart';
 import 'package:global_news/modules/authentication/login_module/widgets/login_button.dart';
+import 'package:global_news/modules/authentication/widgets/login_or_register.dart';
+import 'package:global_news/modules/routes.dart';
 
 class Login extends StatefulWidget {
   static String name = '/login';
@@ -84,15 +86,33 @@ class _LoginState extends State<Login> {
                       (MediaQuery.of(context).size.height * (1 / 6) - 25.0) /
                               2 -
                           25.0,
-                  child: Container(
-                    margin: const EdgeInsets.only(top: 20.0),
-                    width: MediaQuery.of(context).size.width,
-                    padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                    child: LoginButton(loginFormKey: _loginFormKey),
+                  child: Column(
+                    children: [
+                      const DontHaveAnAccount(),
+                      Container(
+                        margin: const EdgeInsets.only(top: 30.0),
+                        width: MediaQuery.of(context).size.width,
+                        padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                        child: LoginButton(loginFormKey: _loginFormKey),
+                      ),
+                    ],
                   ),
                 ),
               ],
             ),
+    );
+  }
+}
+
+class DontHaveAnAccount extends StatelessWidget {
+  const DontHaveAnAccount({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return const LoginOrRegister(
+      route: registerRoute,
+      message: "Don't have an account?  ",
+      routePlaceHolder: 'Register',
     );
   }
 }

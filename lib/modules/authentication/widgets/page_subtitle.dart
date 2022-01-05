@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:global_news/widgets/large_text.dart';
 
-class LoginPageSubTitle extends StatelessWidget {
+class PageSubTitle extends StatelessWidget {
   final String text;
-  const LoginPageSubTitle({
+  const PageSubTitle({
     Key? key,
     required this.text,
   }) : super(key: key);

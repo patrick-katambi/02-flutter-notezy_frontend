@@ -5,19 +5,21 @@ class LargeTitleText extends StatelessWidget {
   final String? fontFmily;
   final double? fontSize;
   final Color? color;
+  final TextAlign? alignment;
   const LargeTitleText({
     Key? key,
     required this.text,
     this.fontSize = 30.0,
     this.fontFmily = 'Lora',
     this.color = Colors.white,
+    this.alignment = TextAlign.center,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Text(
       text,
-      textAlign: TextAlign.center,
+      textAlign: alignment,
       style: TextStyle(
         fontFamily: fontFmily,
         color: color,

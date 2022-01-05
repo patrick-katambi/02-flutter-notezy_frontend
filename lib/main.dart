@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:global_news/modules/authentication/authentication.dart';
 import 'package:global_news/modules/authentication/login_module/login.dart';
 import 'package:global_news/modules/authentication/register_module/register.dart';
-import 'package:global_news/modules/screens.dart';
+import 'package:global_news/modules/routes.dart';
 
 void main() {
   const style = SystemUiOverlayStyle(statusBarColor: Colors.transparent);

@@ -1,26 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:global_news/modules/authentication/register_module/widgets/username_field.dart';
 import 'package:global_news/modules/authentication/widgets/email_field.dart';
 import 'package:global_news/modules/authentication/widgets/password_field.dart';
 
-class LoginForm extends StatefulWidget {
-  final GlobalKey<FormState> loginFormKey;
-  const LoginForm({
+class RegisterForm extends StatefulWidget {
+  final GlobalKey<FormState> registerFormKey;
+  const RegisterForm({
     Key? key,
-    required this.loginFormKey,
+    required this.registerFormKey,
   }) : super(key: key);
 
   @override
-  Login_FormState createState() => Login_FormState();
+  _RegisterFormState createState() => _RegisterFormState();
 }
 
-// ignore: camel_case_types
-class Login_FormState extends State<LoginForm> {
+class _RegisterFormState extends State<RegisterForm> {
   @override
   Widget build(BuildContext context) {
     return Form(
-      key: widget.loginFormKey,
+      key: widget.registerFormKey,
       child: Column(
         children: const <Widget>[
+          UsernameField(),
+          SizedBox(height: 20.0),
           EmailField(),
           SizedBox(height: 20.0),
           PasswordField()

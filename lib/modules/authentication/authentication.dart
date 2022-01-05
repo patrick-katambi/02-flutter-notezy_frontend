@@ -75,24 +75,31 @@ class WelcomeScreenImage extends StatelessWidget {
     var orientation = MediaQuery.of(context).orientation;
     return Container(
       decoration: BoxDecoration(
-        color: Theme.of(context).primaryColor,
-        borderRadius: BorderRadius.only(
-          topRight: orientation == Orientation.landscape
-              ? const Radius.circular(20.0)
-              : const Radius.circular(0.0),
-          bottomRight: const Radius.circular(20.0),
-          bottomLeft: orientation == Orientation.landscape
-              ? const Radius.circular(0.0)
-              : const Radius.circular(20.0),
+        // borderRadius: BorderRadius.only(
+        //   topRight: orientation == Orientation.landscape
+        //       ? const Radius.circular(20.0)
+        //       : const Radius.circular(0.0),
+        //   bottomRight: const Radius.circular(20.0),
+        //   bottomLeft: orientation == Orientation.landscape
+        //       ? const Radius.circular(0.0)
+        //       : const Radius.circular(20.0),
+        // ),
+        gradient: LinearGradient(
+          begin: orientation == Orientation.landscape
+              ? Alignment.centerRight
+              : Alignment.bottomCenter,
+          end: orientation == Orientation.landscape
+              ? Alignment.centerLeft
+              : Alignment.topCenter,
+          colors: <Color>[
+            Theme.of(context).scaffoldBackgroundColor,
+            Theme.of(context).primaryColor,
+          ],
         ),
-        image: const DecorationImage(
-          image: AssetImage('assets/images/skateboard.png'),
-          fit: BoxFit.cover,
-          // colorFilter: ColorFilter.mode(
-          //   Colors.blueGrey,
-          //   BlendMode.darken,
-          // ),
-        ),
+        // image: const DecorationImage(
+        //   image: AssetImage('assets/images/skateboard.png'),
+        //   fit: BoxFit.cover,
+        // ),
       ),
     );
   }
