@@ -75,15 +75,6 @@ class WelcomeScreenImage extends StatelessWidget {
     var orientation = MediaQuery.of(context).orientation;
     return Container(
       decoration: BoxDecoration(
-        // borderRadius: BorderRadius.only(
-        //   topRight: orientation == Orientation.landscape
-        //       ? const Radius.circular(20.0)
-        //       : const Radius.circular(0.0),
-        //   bottomRight: const Radius.circular(20.0),
-        //   bottomLeft: orientation == Orientation.landscape
-        //       ? const Radius.circular(0.0)
-        //       : const Radius.circular(20.0),
-        // ),
         gradient: LinearGradient(
           begin: orientation == Orientation.landscape
               ? Alignment.centerRight
@@ -96,10 +87,6 @@ class WelcomeScreenImage extends StatelessWidget {
             Theme.of(context).primaryColor,
           ],
         ),
-        // image: const DecorationImage(
-        //   image: AssetImage('assets/images/skateboard.png'),
-        //   fit: BoxFit.cover,
-        // ),
       ),
     );
   }
