@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:global_news/modules/authentication/widgets/email_field.dart';
-import 'package:global_news/modules/authentication/widgets/password_field.dart';
+import 'package:global_news/components/email_field.dart';
+import 'package:global_news/components/password_field.dart';
 
 class LoginForm extends StatefulWidget {
   final GlobalKey<FormState> loginFormKey;

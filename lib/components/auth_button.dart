@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:global_news/modules/authentication/widgets/auth_text.dart';
+import 'package:global_news/components/auth_text.dart';
 
 class AuthScreenButton extends StatelessWidget {
   final String route;

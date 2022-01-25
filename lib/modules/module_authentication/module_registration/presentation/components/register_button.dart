@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:global_news/core/app_routes.dart';
+import 'package:global_news/modules/module_authentication/module_registration/domain/registration.dart';
 import 'package:global_news/widgets/button.dart';
-import 'package:global_news/widgets/normal_text.dart';
+import 'package:provider/provider.dart';
 
 class RegisterButton extends StatelessWidget {
   final GlobalKey<FormState> registerFormKey;
+
   const RegisterButton({
     Key? key,
     required this.registerFormKey,
@@ -11,12 +14,11 @@ class RegisterButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final registrationDomain = context.watch<Registration>();
     return ButtonGlobal(
-      onPressed: () {
+      onPressed: () async {
         if (registerFormKey.currentState!.validate()) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: NormalText(text: 'Processing Data')),
-          );
+          registrationDomain.register();
         }
       },
       text: 'Register',

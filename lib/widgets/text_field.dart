@@ -4,6 +4,7 @@ class TextFieldCustom extends StatefulWidget {
   final TextEditingController controller;
   final ValueChanged<String> onChanged;
   final FormFieldValidator<String> validator;
+  final TextInputType? keyboardType;
   final Widget? prefix;
   final Widget? suffix;
   final String hint;
@@ -14,6 +15,7 @@ class TextFieldCustom extends StatefulWidget {
     required this.controller,
     required this.onChanged,
     required this.validator,
+    this.keyboardType = TextInputType.emailAddress,
     this.prefix = const SizedBox.shrink(),
     this.suffix = const SizedBox.shrink(),
     required this.hint,
@@ -31,7 +33,7 @@ class _TextFieldCustomState extends State<TextFieldCustom> {
   Widget build(BuildContext context) {
     return TextFormField(
       controller: widget.controller,
-      keyboardType: TextInputType.emailAddress,
+      keyboardType: widget.keyboardType,
       obscureText: widget.isObscured!,
       validator: widget.validator,
       onChanged: widget.onChanged,

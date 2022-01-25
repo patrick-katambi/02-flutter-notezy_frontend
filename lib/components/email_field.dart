@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:global_news/modules/module_authentication/module_registration/domain/registration.dart';
 import 'package:global_news/widgets/text_field.dart';
+import 'package:provider/provider.dart';
 
 class EmailField extends StatefulWidget {
   const EmailField({Key? key}) : super(key: key);
@@ -13,9 +15,11 @@ class _EmailFieldState extends State<EmailField> {
 
   @override
   Widget build(BuildContext context) {
+    final registrationDomain = context.watch<Registration>();
+
     return TextFieldCustom(
       controller: _emailFieldController,
-      onChanged: (value) {},
+      onChanged: (value) => registrationDomain.setEmail(value),
       hint: 'my_email@gmail.com',
       labelText: 'Email',
       validator: (value) {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:global_news/modules/icons.dart';
+import 'package:global_news/core/icons.dart';
 
 class BarBackIcon extends StatelessWidget {
   const BarBackIcon({Key? key}) : super(key: key);

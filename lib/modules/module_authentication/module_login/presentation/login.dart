@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:global_news/modules/authentication/login_module/component/form.dart';
-import 'package:global_news/modules/authentication/login_module/component/login_message.dart';
-import 'package:global_news/modules/authentication/widgets/back_icon_button.dart';
-import 'package:global_news/modules/authentication/login_module/widgets/login_button.dart';
-import 'package:global_news/modules/authentication/widgets/login_or_register.dart';
-import 'package:global_news/modules/routes.dart';
+import 'package:global_news/components/back_icon_button.dart';
+import 'package:global_news/core/app_routes.dart';
+import 'package:global_news/modules/module_authentication/module_login/presentation/component/form.dart';
+import 'package:global_news/modules/module_authentication/module_login/presentation/component/login_message.dart';
+import 'package:global_news/modules/module_authentication/module_login/presentation/component/login_button.dart';
+import 'package:global_news/components/login_or_register.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -15,6 +15,7 @@ class Login extends StatefulWidget {
 
 class _LoginState extends State<Login> {
   final _loginFormKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     var orientation = MediaQuery.of(context).orientation;
@@ -37,11 +38,7 @@ class _LoginState extends State<Login> {
                     const SizedBox(height: 20.0),
                   ],
                 ),
-                const Positioned(
-                  top: 50.0,
-                  left: 10.0,
-                  child: BackIconButton(),
-                )
+                const Positioned(top: 50.0, left: 10.0, child: BackIconButton())
               ],
             )
           : Stack(
@@ -86,7 +83,7 @@ class _LoginState extends State<Login> {
                           25.0,
                   child: Column(
                     children: [
-                      const DontHaveAnAccount(),
+                      const DoNotHaveAnAccount(),
                       Container(
                         margin: const EdgeInsets.only(top: 30.0),
                         width: MediaQuery.of(context).size.width,
@@ -102,8 +99,8 @@ class _LoginState extends State<Login> {
   }
 }
 
-class DontHaveAnAccount extends StatelessWidget {
-  const DontHaveAnAccount({Key? key}) : super(key: key);
+class DoNotHaveAnAccount extends StatelessWidget {
+  const DoNotHaveAnAccount({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

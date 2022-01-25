@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:global_news/modules/authentication/components/auth_button_section.dart';
-import 'package:global_news/modules/authentication/widgets/punch_line.dart';
-import 'package:global_news/modules/authentication/widgets/punch_line_supporting.dart';
+import 'package:global_news/components/auth_button_section.dart';
+import 'package:global_news/components/punch_line.dart';
+import 'package:global_news/components/punch_line_supporting.dart';
 
 class Authentication extends StatelessWidget {
   const Authentication({Key? key}) : super(key: key);

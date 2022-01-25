@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:global_news/modules/module_authentication/module_registration/domain/registration.dart';
 import 'package:global_news/widgets/text_field.dart';
+import 'package:provider/provider.dart';
 
 class UsernameField extends StatefulWidget {
   const UsernameField({Key? key}) : super(key: key);
@@ -13,9 +15,11 @@ class _UsernameFieldState extends State<UsernameField> {
 
   @override
   Widget build(BuildContext context) {
+    final registrationDomain = context.watch<Registration>();
+
     return TextFieldCustom(
       controller: _usernameFieldController,
-      onChanged: (value) {},
+      onChanged: (value) => registrationDomain.setUsername(value),
       hint: 'Patrick_101',
       labelText: 'Username',
       validator: (value) {
@@ -24,7 +28,7 @@ class _UsernameFieldState extends State<UsernameField> {
         }
 
         if (value.length < 5) {
-          return 'Username must have atleast 5 letters';
+          return 'Username must have at least 5 letters';
         }
 
         if (value.contains(' ')) {

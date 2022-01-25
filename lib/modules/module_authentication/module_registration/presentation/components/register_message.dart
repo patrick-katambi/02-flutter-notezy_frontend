@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:global_news/modules/authentication/widgets/page_subtitle.dart';
+import 'package:global_news/components/page_subtitle.dart';
 import 'package:global_news/widgets/large_text.dart';
 
 class RegisterMessage extends StatelessWidget {

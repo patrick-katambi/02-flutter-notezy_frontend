@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:global_news/modules/authentication/texts.dart';
+import 'package:global_news/core/auth_module_texts.dart';
 import 'package:global_news/widgets/normal_text.dart';
 
 class SupportingPunchLine extends StatelessWidget {
