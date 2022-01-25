@@ -14,6 +14,12 @@ class _UsernameFieldState extends State<UsernameField> {
   final _usernameFieldController = TextEditingController();
 
   @override
+  void dispose() {
+    _usernameFieldController.clear();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     final registrationDomain = context.watch<Registration>();
 

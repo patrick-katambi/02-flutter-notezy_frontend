@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:global_news/modules/module_authentication/module_registration/domain/registration.dart';
+import 'package:global_news/widgets/normal_text.dart';
 import 'package:global_news/widgets/text_field.dart';
 import 'package:provider/provider.dart';
 
@@ -14,6 +15,12 @@ class _PhoneNumberFieldState extends State<PhoneNumberField> {
   final _phoneNumberFieldController = TextEditingController();
 
   @override
+  void dispose() {
+    _phoneNumberFieldController.clear();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     final registrationDomain = context.watch<Registration>();
 
@@ -23,6 +30,10 @@ class _PhoneNumberFieldState extends State<PhoneNumberField> {
       hint: '255701122345',
       keyboardType: TextInputType.phone,
       labelText: 'Phone Number',
+      prefix: const Padding(
+        padding:  EdgeInsets.only(right: 5.0),
+        child:  NormalText(text: "+255"),
+      ),
       validator: (value) {
         if (value == null) {
           return 'Phone Number must not be null';

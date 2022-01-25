@@ -38,7 +38,7 @@ class Registration with ChangeNotifier {
         UserRegistrationModel(
           username: _username,
           email: _email,
-          phoneNumber: _phoneNumber,
+          phoneNumber: "255$_phoneNumber",
           password: _password,
         ),
       );

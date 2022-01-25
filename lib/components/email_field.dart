@@ -14,6 +14,12 @@ class _EmailFieldState extends State<EmailField> {
   final _emailFieldController = TextEditingController();
 
   @override
+  void dispose() {
+    _emailFieldController.clear();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     final registrationDomain = context.watch<Registration>();
 
