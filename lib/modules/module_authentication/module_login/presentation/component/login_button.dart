@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:global_news/widgets/button.dart';
-import 'package:global_news/widgets/normal_text.dart';
+import 'package:global_news/components/button.dart';
+import 'package:global_news/components/normal_text.dart';
 
 class LoginButton extends StatelessWidget {
   final GlobalKey<FormState> loginFormKey;
@@ -19,7 +19,7 @@ class LoginButton extends StatelessWidget {
           );
         }
       },
-      text: 'Login',
+      text: 'Login', buttonText: null,
     );
   }
 }

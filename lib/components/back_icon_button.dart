@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:global_news/widgets/normal_text.dart';
+import 'package:global_news/components/normal_text.dart';
 
 class BackIconButton extends StatelessWidget {
   const BackIconButton({
@@ -14,7 +14,7 @@ class BackIconButton extends StatelessWidget {
         width: 113.0,
         alignment: Alignment.centerLeft,
         padding: const EdgeInsets.symmetric(
-          horizontal: 15.0,
+          // horizontal: 15.0,
           vertical: 10.0,
         ),
         decoration: BoxDecoration(
@@ -22,7 +22,7 @@ class BackIconButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(10.0),
         ),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
           mainAxisSize: MainAxisSize.min,
           children: const [
             Icon(Icons.chevron_left, color: Colors.grey),

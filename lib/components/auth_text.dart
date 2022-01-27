@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:global_news/widgets/normal_text.dart';
+import 'package:global_news/components/normal_text.dart';
 
 class AuthText extends StatelessWidget {
   final String text;
@@ -10,6 +10,6 @@ class AuthText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return NormalText(text: text);
+    return NormalText(text: text, color: Colors.white);
   }
 }

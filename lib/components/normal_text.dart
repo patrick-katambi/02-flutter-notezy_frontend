@@ -8,7 +8,8 @@ class NormalText extends StatelessWidget {
   const NormalText(
       {Key? key,
       this.textAlign = TextAlign.left,
-      this.color = Colors.white,
+      // this.color = Colors.white,
+      this.color = Colors.black,
       required this.text})
       : super(key: key);
 

@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:global_news/widgets/normal_text.dart';
+import 'package:global_news/components/normal_text.dart';
 
 class ButtonGlobal extends StatelessWidget {
   final VoidCallback onPressed;
   final String text;
+  final Widget? buttonText;
   const ButtonGlobal({
     Key? key,
     required this.onPressed,
+    required this.buttonText,
     required this.text,
   }) : super(key: key);
 
@@ -21,7 +23,7 @@ class ButtonGlobal extends StatelessWidget {
         ),
       ),
       onPressed: onPressed,
-      child: NormalText(text: text),
+      child: buttonText ?? NormalText(text: text, color: Colors.white),
     );
   }
 }

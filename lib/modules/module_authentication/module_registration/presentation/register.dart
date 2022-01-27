@@ -7,6 +7,7 @@ import 'package:global_news/modules/module_authentication/module_registration/pr
 import 'package:global_news/modules/module_authentication/module_registration/presentation/components/register_form.dart';
 import 'package:global_news/modules/module_authentication/module_registration/presentation/components/register_message.dart';
 import 'package:global_news/components/login_or_register.dart';
+import 'package:global_news/public_domains/user.dart';
 import 'package:provider/provider.dart';
 
 class Register extends StatefulWidget {
@@ -22,14 +23,20 @@ class _RegisterState extends State<Register> {
   @override
   Widget build(BuildContext context) {
     final registrationDomain = context.watch<Registration>();
+
+    Widget clearUser() {
+      registrationDomain.userClear();
+      return const SizedBox.shrink();
+    }
+    final userDomain = context.watch<UserDomain>();
+    final username = userDomain.user.username;
     var orientation = MediaQuery.of(context).orientation;
     return Scaffold(
       // appBar: bar(context: context, title: "Register"),
-      body: registrationDomain.loading
-          ? const Center(child: CircularProgressIndicator())
-          : orientation == Orientation.landscape
+      body: orientation == Orientation.landscape
               ? Stack(
                   children: [
+                    clearUser(),
                     ListView(
                       padding: EdgeInsets.symmetric(
                         horizontal: MediaQuery.of(context).size.width * 0.15,
@@ -41,7 +48,7 @@ class _RegisterState extends State<Register> {
                         const SizedBox(height: 20.0),
                         RegisterForm(registerFormKey: _registerFormKey),
                         const SizedBox(height: 40.0),
-                        RegisterButton(registerFormKey: _registerFormKey),
+                        registerButton(context: context,registerFormKey: _registerFormKey, username: username!),
                         const SizedBox(height: 20.0),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
@@ -68,7 +75,7 @@ class _RegisterState extends State<Register> {
                           const SizedBox(height: 40.0),
                           RegisterForm(registerFormKey: _registerFormKey),
                           const SizedBox(height: 40.0),
-                          RegisterButton(registerFormKey: _registerFormKey),
+                          registerButton(context: context,registerFormKey: _registerFormKey, username: username!),
                           const SizedBox(height: 20.0),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.center,

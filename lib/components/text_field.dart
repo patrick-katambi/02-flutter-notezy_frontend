@@ -8,8 +8,10 @@ class TextFieldCustom extends StatefulWidget {
   final Widget? prefix;
   final Widget? suffix;
   final String hint;
-  final String labelText;
+  final String? labelText;
   final bool? isObscured;
+  final bool? autofocus;
+
   const TextFieldCustom({
     Key? key,
     required this.controller,
@@ -19,8 +21,9 @@ class TextFieldCustom extends StatefulWidget {
     this.prefix = const SizedBox.shrink(),
     this.suffix = const SizedBox.shrink(),
     required this.hint,
-    required this.labelText,
+    this.labelText,
     this.isObscured = false,
+    this.autofocus = false,
   }) : super(key: key);
 
   @override
@@ -29,9 +32,11 @@ class TextFieldCustom extends StatefulWidget {
 
 class _TextFieldCustomState extends State<TextFieldCustom> {
   bool isSuccess = false;
+
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      autofocus: widget.autofocus!,
       controller: widget.controller,
       keyboardType: widget.keyboardType,
       obscureText: widget.isObscured!,
@@ -74,7 +79,8 @@ class _TextFieldCustomState extends State<TextFieldCustom> {
   OutlineInputBorder borderStyle({required BuildContext context}) {
     // the context will help in theme management possibly 🤷‍♂️
     return OutlineInputBorder(
-        borderSide: const BorderSide(color: Colors.white, width: 0.5),
+        borderSide:
+            BorderSide(color: Theme.of(context).primaryColor, width: 0.5),
         borderRadius: BorderRadius.circular(10.0));
   }
 }

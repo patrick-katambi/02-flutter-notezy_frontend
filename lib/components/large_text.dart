@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class LargeTitleText extends StatelessWidget {
   final String text;
-  final String? fontFmily;
+  final String? fontFamily;
   final double? fontSize;
   final Color? color;
   final TextAlign? alignment;
@@ -10,8 +10,9 @@ class LargeTitleText extends StatelessWidget {
     Key? key,
     required this.text,
     this.fontSize = 30.0,
-    this.fontFmily = 'Lora',
-    this.color = Colors.white,
+    this.fontFamily = 'Lora',
+    this.color = Colors.black,
+    // this.color = Colors.white,
     this.alignment = TextAlign.center,
   }) : super(key: key);
 
@@ -21,7 +22,7 @@ class LargeTitleText extends StatelessWidget {
       text,
       textAlign: alignment,
       style: TextStyle(
-        fontFamily: fontFmily,
+        fontFamily: fontFamily,
         color: color,
         fontWeight: FontWeight.bold,
         fontSize: fontSize,

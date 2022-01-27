@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:global_news/components/text_field.dart';
 import 'package:global_news/modules/module_authentication/module_registration/domain/registration.dart';
-import 'package:global_news/widgets/normal_text.dart';
-import 'package:global_news/widgets/text_field.dart';
+import 'package:global_news/components/normal_text.dart';
 import 'package:provider/provider.dart';
 
 class PhoneNumberField extends StatefulWidget {
@@ -27,7 +27,7 @@ class _PhoneNumberFieldState extends State<PhoneNumberField> {
     return TextFieldCustom(
       controller: _phoneNumberFieldController,
       onChanged: (value)  => registrationDomain.setPhoneNumber(value),
-      hint: '255701122345',
+      hint: '701122345',
       keyboardType: TextInputType.phone,
       labelText: 'Phone Number',
       prefix: const Padding(

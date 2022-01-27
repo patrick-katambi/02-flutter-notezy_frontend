@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:global_news/components/text_field.dart';
 import 'package:global_news/modules/module_authentication/module_registration/domain/registration.dart';
-import 'package:global_news/widgets/text_field.dart';
 import 'package:provider/provider.dart';
 
 class PasswordField extends StatefulWidget {

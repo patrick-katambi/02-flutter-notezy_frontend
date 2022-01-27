@@ -33,9 +33,14 @@ class _LoginState extends State<Login> {
                     const LoginMessage(),
                     const SizedBox(height: 20.0),
                     LoginForm(loginFormKey: _loginFormKey),
-                    const SizedBox(height: 20.0),
+                    const SizedBox(height: 40.0),
                     LoginButton(loginFormKey: _loginFormKey),
                     const SizedBox(height: 20.0),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: const [DoNotHaveAnAccount()],
+                    ),
+                    const SizedBox(height: 40.0),
                   ],
                 ),
                 const Positioned(top: 50.0, left: 10.0, child: BackIconButton())
@@ -43,56 +48,52 @@ class _LoginState extends State<Login> {
             )
           : Stack(
               children: [
-                Column(
-                  children: [
-                    Expanded(
-                      flex: 5,
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                        child: ListView(
-                          physics: const BouncingScrollPhysics(),
-                          children: [
-                            const SizedBox(height: 50.0),
-                            Row(children: const [BackIconButton(), Spacer()]),
-                            const SizedBox(height: 40.0),
-                            const LoginMessage(),
-                            const SizedBox(height: 40.0),
-                            LoginForm(loginFormKey: _loginFormKey),
-                            const SizedBox(height: 20.0),
-                          ],
-                        ),
-                      ),
-                    ),
-                    Expanded(
-                      child:
-                          Container(width: MediaQuery.of(context).size.width),
-                    ),
-                  ],
-                ),
-                Positioned(
-                  bottom:
-                      // top expanded widget = 5x
-                      // bottom expanded widget = 1x
-                      // thus top expanded is 5 times more then bottom expanded widget
-                      // size of bottom expanded widget is 1/6 of full screen height
-                      // then subtracting by half of button padding and button height combined
-                      // halving the result offsets towards the top by 15.0
-                      // subtracting by 15.0 centers the button on the bottom expanded widget
-                      (MediaQuery.of(context).size.height * (1 / 6) - 25.0) /
-                              2 -
-                          25.0,
-                  child: Column(
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                  child: ListView(
+                    physics: const BouncingScrollPhysics(),
                     children: [
-                      const DoNotHaveAnAccount(),
-                      Container(
-                        margin: const EdgeInsets.only(top: 30.0),
-                        width: MediaQuery.of(context).size.width,
-                        padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                        child: LoginButton(loginFormKey: _loginFormKey),
+                      const SizedBox(height: 50.0),
+                      Row(children: const [BackIconButton(), Spacer()]),
+                      const SizedBox(height: 40.0),
+                      const LoginMessage(),
+                      const SizedBox(height: 40.0),
+                      LoginForm(loginFormKey: _loginFormKey),
+                      const SizedBox(height: 40.0),
+                      LoginButton(loginFormKey: _loginFormKey),
+                      const SizedBox(height: 20.0),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: const [DoNotHaveAnAccount()],
                       ),
+                      const SizedBox(height: 40.0),
                     ],
                   ),
                 ),
+                // Positioned(
+                //   bottom:
+                //       // top expanded widget = 5x
+                //       // bottom expanded widget = 1x
+                //       // thus top expanded is 5 times more then bottom expanded widget
+                //       // size of bottom expanded widget is 1/6 of full screen height
+                //       // then subtracting by half of button padding and button height combined
+                //       // halving the result offsets towards the top by 15.0
+                //       // subtracting by 15.0 centers the button on the bottom expanded widget
+                //       (MediaQuery.of(context).size.height * (1 / 6) - 25.0) /
+                //               2 -
+                //           25.0,
+                //   child: Column(
+                //     children: [
+                //       const DoNotHaveAnAccount(),
+                //       Container(
+                //         margin: const EdgeInsets.only(top: 30.0),
+                //         width: MediaQuery.of(context).size.width,
+                //         padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                //         child: LoginButton(loginFormKey: _loginFormKey),
+                //       ),
+                //     ],
+                //   ),
+                // ),
               ],
             ),
     );

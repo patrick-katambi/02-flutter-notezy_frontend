@@ -1,19 +1,17 @@
 class UserModel {
   final String? username;
   final String? email;
-  final String? phoneNumber;
 
   UserModel({
-     this.username = "None",
-     this.email = "None",
-     this.phoneNumber = "None",
+     required this.username,
+     required this.email,
   });
 
   factory UserModel.fromJson(Map<String, dynamic> json) {
+    String data = "data";
     return UserModel(
-      username: json["username"],
-      email: json["email"],
-      phoneNumber: json["phoneNumber"],
+      username: json[data]["username"],
+      email: json[data]["email"],
     );
   }
 }

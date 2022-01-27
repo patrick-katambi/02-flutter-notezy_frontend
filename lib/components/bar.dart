@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:global_news/widgets/bar_back_icon.dart';
-import 'package:global_news/widgets/large_text.dart';
+import 'package:global_news/components/bar_back_icon.dart';
+import 'package:global_news/components/large_text.dart';
 
 AppBar bar(
     {String? title, Widget? leadingIcon, required BuildContext context}) {
@@ -9,7 +9,7 @@ AppBar bar(
         ? LargeTitleText(
             text: title,
             fontSize: 20.0,
-            fontFmily: 'Mulish',
+            fontFamily: 'Mulish',
           )
         : const SizedBox.shrink(),
     centerTitle: true,

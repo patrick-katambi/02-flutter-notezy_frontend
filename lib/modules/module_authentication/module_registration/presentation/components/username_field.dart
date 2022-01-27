@@ -1,6 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:global_news/components/text_field.dart';
 import 'package:global_news/modules/module_authentication/module_registration/domain/registration.dart';
-import 'package:global_news/widgets/text_field.dart';
 import 'package:provider/provider.dart';
 
 class UsernameField extends StatefulWidget {
@@ -26,20 +27,17 @@ class _UsernameFieldState extends State<UsernameField> {
     return TextFieldCustom(
       controller: _usernameFieldController,
       onChanged: (value) => registrationDomain.setUsername(value),
-      hint: 'Patrick_101',
+      hint: 'clark_kent',
       labelText: 'Username',
       validator: (value) {
-        if (value == null) {
-          return 'Username must not be null';
-        }
+        const nullCheck = 'Username must not be null';
+        if (value == null) return nullCheck;
 
-        if (value.length < 5) {
-          return 'Username must have at least 5 letters';
-        }
+        const lengthCheck = 'Username must have at least 5 letters';
+        if (value.length < 5) return lengthCheck;
 
-        if (value.contains(' ')) {
-          return 'No spaces allowed';
-        }
+        const spacesCheck = 'No spaces allowed';
+        if (value.contains(' ')) return spacesCheck;
 
         return null;
       },

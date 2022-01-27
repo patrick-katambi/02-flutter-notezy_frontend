@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:global_news/components/large_text.dart';
 import 'package:global_news/core/auth_module_texts.dart';
-import 'package:global_news/widgets/large_text.dart';
 
 class PunchLine extends StatelessWidget {
   const PunchLine({
