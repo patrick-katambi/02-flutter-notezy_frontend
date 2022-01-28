@@ -4,7 +4,7 @@ import 'package:global_news/components/large_text.dart';
 import 'package:global_news/components/text_field.dart';
 import 'package:global_news/modules/module_otp/presentation/components/otp_message.dart';
 import 'package:global_news/modules/module_otp/presentation/otp_text.dart';
-import 'package:global_news/public_domains/user.dart';
+import 'package:global_news/core/domain/user.dart';
 import 'package:global_news/components/button.dart';
 import 'package:global_news/components/normal_text.dart';
 import 'package:provider/provider.dart';

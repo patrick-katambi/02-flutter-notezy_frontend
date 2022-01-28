@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:global_news/core/domain/theme.dart';
+import 'package:provider/provider.dart';
 
 class TextFieldCustom extends StatefulWidget {
   final TextEditingController controller;
@@ -77,10 +79,13 @@ class _TextFieldCustomState extends State<TextFieldCustom> {
   }
 
   OutlineInputBorder borderStyle({required BuildContext context}) {
-    // the context will help in theme management possibly 🤷‍♂️
+    final themeMode = context.watch<ThemeDomain>().themeMode;
+    final borderColor = themeMode == ThemeMode.light
+        ? Theme.of(context).primaryColor
+        : Colors.grey;
     return OutlineInputBorder(
         borderSide:
-            BorderSide(color: Theme.of(context).primaryColor, width: 0.5),
+            BorderSide(color: borderColor, width: 0.5),
         borderRadius: BorderRadius.circular(10.0));
   }
 }

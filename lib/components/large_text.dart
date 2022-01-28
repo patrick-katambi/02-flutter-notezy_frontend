@@ -6,13 +6,13 @@ class LargeTitleText extends StatelessWidget {
   final double? fontSize;
   final Color? color;
   final TextAlign? alignment;
+
   const LargeTitleText({
     Key? key,
     required this.text,
     this.fontSize = 30.0,
     this.fontFamily = 'Lora',
-    this.color = Colors.black,
-    // this.color = Colors.white,
+    this.color,
     this.alignment = TextAlign.center,
   }) : super(key: key);
 
@@ -21,12 +21,12 @@ class LargeTitleText extends StatelessWidget {
     return Text(
       text,
       textAlign: alignment,
-      style: TextStyle(
-        fontFamily: fontFamily,
-        color: color,
-        fontWeight: FontWeight.bold,
-        fontSize: fontSize,
-      ),
+      style: Theme.of(context).textTheme.bodyText1!.copyWith(
+            fontFamily: fontFamily,
+            fontWeight: FontWeight.bold,
+            fontSize: fontSize,
+            color: color,
+          ),
     );
   }
 }

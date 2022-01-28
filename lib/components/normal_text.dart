@@ -9,7 +9,7 @@ class NormalText extends StatelessWidget {
       {Key? key,
       this.textAlign = TextAlign.left,
       // this.color = Colors.white,
-      this.color = Colors.black,
+      this.color,
       required this.text})
       : super(key: key);
 

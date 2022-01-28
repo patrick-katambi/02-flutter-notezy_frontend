@@ -7,7 +7,7 @@ import 'package:global_news/modules/module_authentication/module_registration/pr
 import 'package:global_news/modules/module_authentication/module_registration/presentation/components/register_form.dart';
 import 'package:global_news/modules/module_authentication/module_registration/presentation/components/register_message.dart';
 import 'package:global_news/components/login_or_register.dart';
-import 'package:global_news/public_domains/user.dart';
+import 'package:global_news/core/domain/user.dart';
 import 'package:provider/provider.dart';
 
 class Register extends StatefulWidget {
