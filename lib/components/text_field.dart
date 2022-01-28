@@ -84,8 +84,7 @@ class _TextFieldCustomState extends State<TextFieldCustom> {
         ? Theme.of(context).primaryColor
         : Colors.grey;
     return OutlineInputBorder(
-        borderSide:
-            BorderSide(color: borderColor, width: 0.5),
+        borderSide: BorderSide(color: borderColor, width: 0.5),
         borderRadius: BorderRadius.circular(10.0));
   }
 }

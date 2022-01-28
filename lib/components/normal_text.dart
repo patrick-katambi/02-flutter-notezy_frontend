@@ -8,7 +8,6 @@ class NormalText extends StatelessWidget {
   const NormalText(
       {Key? key,
       this.textAlign = TextAlign.left,
-      // this.color = Colors.white,
       this.color,
       required this.text})
       : super(key: key);
@@ -18,9 +17,7 @@ class NormalText extends StatelessWidget {
     return Text(
       text,
       textAlign: textAlign,
-      style: Theme.of(context).textTheme.bodyText1!.copyWith(
-            color: color,
-          ),
+      style: Theme.of(context).textTheme.bodyText1!.copyWith(color: color),
     );
   }
 }
