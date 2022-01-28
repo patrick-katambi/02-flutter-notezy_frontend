@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:global_news/components/back_icon_button.dart';
-import 'package:global_news/components/large_text.dart';
 import 'package:global_news/components/text_field.dart';
 import 'package:global_news/modules/module_otp/presentation/components/otp_message.dart';
-import 'package:global_news/modules/module_otp/presentation/otp_text.dart';
+import 'package:global_news/modules/module_otp/presentation/components/otp_message_details.dart';
 import 'package:global_news/core/domain/user.dart';
 import 'package:global_news/components/button.dart';
 import 'package:global_news/components/normal_text.dart';
@@ -23,6 +22,7 @@ class _OtpState extends State<Otp> {
   Widget build(BuildContext context) {
     final userDomain = context.watch<UserDomain>();
     final username = userDomain.user.username;
+    final phoneNumber = userDomain.user.phoneNumber;
 
     return Scaffold(
       body: Padding(
@@ -33,15 +33,9 @@ class _OtpState extends State<Otp> {
             const SizedBox(height: 40.0),
             Row(children: const [BackIconButton(), Spacer()]),
             const SizedBox(height: 40.0),
-            message(username: username!),
+            message(username: username!, context: context),
             const SizedBox(height: 20.0),
-            const LargeTitleText(
-              text: otpMessage,
-              alignment: TextAlign.left,
-              fontSize: 15.0,
-              fontFamily: "Mulish",
-              color: Colors.grey,
-            ),
+            otpMessageDetails(context: context, phoneNumber: phoneNumber!),
             const SizedBox(height: 40.0),
             TextFieldCustom(
               controller: _otpController,
@@ -64,5 +58,3 @@ class _OtpState extends State<Otp> {
     );
   }
 }
-
-

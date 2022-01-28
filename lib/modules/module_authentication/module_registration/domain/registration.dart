@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:global_news/core/models.dart';
 import 'package:global_news/modules/module_authentication/module_registration/data/user_registration.dart';
+import 'package:global_news/modules/module_authentication/module_registration/domain/utils/saving_user.dart';
 import 'package:http/http.dart';
 
 class Registration with ChangeNotifier {
@@ -14,7 +15,7 @@ class Registration with ChangeNotifier {
   String message = "";
   String details = "";
   final String _errorMessage = "Please check your internet connection";
-  UserModel user = UserModel(username: "", email: "");
+  UserModel user = UserModel(username: "", email: "", phoneNumber: "");
 
   void clearMessage() {
     message = "";
@@ -27,7 +28,7 @@ class Registration with ChangeNotifier {
   }
 
   void userClear() {
-    user = UserModel(username: "", email: "");
+    user = UserModel(username: "", email: "", phoneNumber: "");
     notifyListeners();
   }
 
@@ -68,15 +69,15 @@ class Registration with ChangeNotifier {
 
     try {
       final Response response = await UserRegistration.register(model);
-      final savedUser = UserRegistration.savingUser(response: response);
+      final savedUser = savingUser(response: response);
 
-      user = savedUser[UserRegistration.userModelKey];
+      user = savedUser[userModelKey];
       notifyListeners();
 
-      message = savedUser[UserRegistration.messageKey];
+      message = savedUser[messageKey];
       notifyListeners();
 
-      details = savedUser[UserRegistration.detailsKey];
+      details = savedUser[detailsKey];
       notifyListeners();
 
       if (message == "Failed") setError(true);
@@ -91,7 +92,7 @@ class Registration with ChangeNotifier {
       details = "cannot connect, check your internet";
       notifyListeners();
 
-      user = UserModel(username: "", email: "");
+      user = UserModel(username: "", email: "", phoneNumber: "");
       notifyListeners();
 
       _loading = false;

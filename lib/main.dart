@@ -24,7 +24,9 @@ void main() {
           create: (_) => ThemeDomain(themeMode: ThemeMode.system),
         ),
         ChangeNotifierProxyProvider<Registration, UserDomain>(
-          create: (_) => UserDomain(UserModel(username: "", email: "")),
+          create: (_) => UserDomain(
+            UserModel(username: "", email: "", phoneNumber: ""),
+          ),
           update: (_, reg, prevUsr) => UserDomain(reg.user),
         ),
       ],
